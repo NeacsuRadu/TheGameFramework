@@ -1,8 +1,9 @@
 ﻿  Source.cpp
+  Game.cpp
   Generating code
-  1 of 5 functions (20.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  2 of 20 functions (10.0%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Bleah.vcxproj -> D:\MDS\Bleah\x64\Release\Bleah.exe
   Bleah.vcxproj -> D:\MDS\Bleah\x64\Release\Bleah.pdb (Full PDB)
