@@ -1,7 +1,5 @@
 #include "Game.h"
 
-#include <iostream>
-
 Game* Game::m_pInstance = nullptr;
 
 Game::Game() :
@@ -61,6 +59,8 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		return false;
 	}
 
+	TextureManager::Instance()->load(std::string("img"), std::string("D:\\MDS\\Bleah\\images\\wolverine.png"), m_pRenderer);
+
 	m_bRunning = true;
 
 	return true;
@@ -68,7 +68,12 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 void Game::render()
 {
+	SDL_SetRenderDrawColor(m_pRenderer, 0, 0, 0, 0);
 	SDL_RenderClear(m_pRenderer);
+
+	TextureManager::Instance()->draw(std::string("img"), 0, 0, 600, 600, m_pRenderer);
+
+
 	SDL_RenderPresent(m_pRenderer);
 }
 
@@ -109,7 +114,10 @@ bool Game::running()
 	return m_bRunning;
 }
 
-
+SDL_Renderer* Game::getRenderer()
+{
+	return m_pRenderer;
+}
 
 
 

@@ -2,7 +2,9 @@
 #ifndef BLEAH_GAME_GAME_H_
 #define BLEAH_GAME_GAME_H_
 
+#include <iostream>
 #include "../../include/SDL.h"
+#include "TextureManager.h"
 
 class Game
 {
@@ -17,6 +19,8 @@ public:
 	void uninit();
 
 	bool running();
+
+	SDL_Renderer* getRenderer();
 
 	static Game* Instance();
 private:
