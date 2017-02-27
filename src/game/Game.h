@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include "../../include/SDL.h"
-#include "TextureManager.h"
+#include "../TextureManager/TextureManager.h"
 
 class Game
 {

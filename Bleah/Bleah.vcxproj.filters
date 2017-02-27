@@ -25,6 +25,12 @@
     <Filter Include="Header Files\TextureManager">
       <UniqueIdentifier>{5a4634fc-dee4-420c-9886-cf46f30a1a8b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\objects">
+      <UniqueIdentifier>{3bd37051-6d9e-48df-b76f-d0b6feb68b53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\objects">
+      <UniqueIdentifier>{d26b1e16-e105-430e-86c8-2ab09e0e66b8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Source.cpp">
@@ -33,7 +39,7 @@
     <ClCompile Include="..\src\game\Game.cpp">
       <Filter>Source Files\game</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\game\TextureManager.cpp">
+    <ClCompile Include="..\src\TextureManager\TextureManager.cpp">
       <Filter>Source Files\TextureManager</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,8 +47,11 @@
     <ClInclude Include="..\src\game\Game.h">
       <Filter>Header Files\game</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\game\TextureManager.h">
+    <ClInclude Include="..\src\TextureManager\TextureManager.h">
       <Filter>Header Files\TextureManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\objects\GameObject.h">
+      <Filter>Header Files\objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
