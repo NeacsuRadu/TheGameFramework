@@ -7,15 +7,14 @@
 #include <map>
 #include "../../include/SDL.h"
 #include "../../include/SDL_image.h"
-#include "../game/Game.h"
 
 class TextureManager
 {
 public:
 	~TextureManager();
 
-	void load(std::string pTextureID, std::string pImagePath);
-	void draw(std::string pTextureID, int x, int y, int width, int height);
+	void load(std::string pTextureID, std::string pImagePath, SDL_Renderer* pRenderer);
+	void draw(std::string pTextureID, int x, int y, int width, int height, SDL_Renderer* pRenderer);
 
 	static TextureManager* Instance();
 private:

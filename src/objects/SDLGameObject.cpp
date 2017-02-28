@@ -11,9 +11,9 @@ SDLGameObject::SDLGameObject(const LoaderParams* params):
 
 }
 
-void SDLGameObject::draw()
+void SDLGameObject::draw(SDL_Renderer* pRenderer)
 {
-	TextureManager::Instance()->draw(texture_id_, x_, y_, width_, height_);
+	TextureManager::Instance()->draw(texture_id_, x_, y_, width_, height_, pRenderer);
 }
 
 void SDLGameObject::update()

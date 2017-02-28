@@ -2,7 +2,7 @@
 and may not be redistributed without written permission.*/
 
 //Using SDL and standard IO
-#include "game\Game.h"
+#include "game\\Game.h"
 
 //Screen dimension constants
 

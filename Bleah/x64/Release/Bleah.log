@@ -1,9 +1,8 @@
-﻿  SDLGameObject.cpp
-  Vector2D.cpp
+﻿  Vector2D.cpp
   Generating code
-  16 of 264 functions ( 6.1%) were compiled, the rest were copied from previous compilation.
-    4 functions were new in current compilation
-    11 functions had inline decision re-evaluated but remain unchanged
+  1 of 329 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Bleah.vcxproj -> D:\MDS\Bleah\x64\Release\Bleah.exe
   Bleah.vcxproj -> D:\MDS\Bleah\x64\Release\Bleah.pdb (Full PDB)

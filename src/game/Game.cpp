@@ -59,7 +59,8 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		return false;
 	}
 
-	TextureManager::Instance()->load(std::string("img"), std::string("D:\\MDS\\Bleah\\images\\wolverine.png"));
+	TextureManager::Instance()->load(std::string("img"), std::string("D:\\MDS\\Bleah\\images\\min.png"), m_pRenderer);
+	m_gameObjects.push_back(new SDLGameObject(new LoaderParams(0, 0, 200, 200, "img")));
 
 	m_bRunning = true;
 
@@ -71,7 +72,10 @@ void Game::render()
 	SDL_SetRenderDrawColor(m_pRenderer, 0, 0, 0, 0);
 	SDL_RenderClear(m_pRenderer);
 
-	TextureManager::Instance()->draw(std::string("img"), 0, 0, 600, 600);
+	for (auto it = 0; it != m_gameObjects.size(); ++it)
+	{
+		m_gameObjects[it]->draw(m_pRenderer);
+	}
 
 
 	SDL_RenderPresent(m_pRenderer);

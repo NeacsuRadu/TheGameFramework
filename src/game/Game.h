@@ -3,8 +3,11 @@
 #define BLEAH_GAME_GAME_H_
 
 #include <iostream>
+#include <vector>
+
 #include "../../include/SDL.h"
-#include "../TextureManager/TextureManager.h"
+
+#include "../objects/SDLGameObject.h"
 
 class Game
 {
@@ -31,6 +34,8 @@ private:
 	SDL_Window* m_pWindow;
 	SDL_Renderer* m_pRenderer;
 	bool m_bRunning;
+
+	std::vector<GameObject*> m_gameObjects;
 };
 #endif
 
