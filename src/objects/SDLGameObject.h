@@ -3,6 +3,7 @@
 #define BLEAH_OBJECTS_SDLGAMEOBJECT_H_
 
 #include "../objects/GameObject.h"
+#include "../vector2d/Vector2D.h"
 
 class SDLGameObject : public GameObject
 {
@@ -15,8 +16,9 @@ public:
 
 protected:
 
-	int x_;
-	int y_;
+	Vector2D position_;
+	Vector2D velocity_;
+	Vector2D acceleration_;
 	int width_;
 	int height_;
 	std::string texture_id_;

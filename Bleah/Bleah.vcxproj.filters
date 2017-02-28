@@ -37,6 +37,12 @@
     <Filter Include="Source Files\vector2d">
       <UniqueIdentifier>{70643252-f58d-45a7-ab33-fc5df644ce8a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\inputManger">
+      <UniqueIdentifier>{fc4a78dc-15e6-4c35-80f0-59fd5735562f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\inputManager">
+      <UniqueIdentifier>{a50d5633-835b-48dd-a46a-71a00bfebeaf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Source.cpp">
@@ -54,6 +60,9 @@
     <ClCompile Include="..\src\vector2d\Vector2D.cpp">
       <Filter>Source Files\vector2d</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\inputHandler\InputManager.cpp">
+      <Filter>Source Files\inputManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\game\Game.h">
@@ -70,6 +79,9 @@
     </ClInclude>
     <ClInclude Include="..\src\vector2d\Vector2D.h">
       <Filter>Header Files\vector2d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\inputHandler\InputManager.h">
+      <Filter>Header Files\inputManger</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

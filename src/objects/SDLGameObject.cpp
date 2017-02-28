@@ -2,8 +2,7 @@
 
 SDLGameObject::SDLGameObject(const LoaderParams* params):
 	GameObject(params),
-	x_(params->x),
-	y_(params->y),
+	position_(params->x, params->y),
 	width_(params->width),
 	height_(params->height),
 	texture_id_(params->texture_id)
@@ -13,12 +12,13 @@ SDLGameObject::SDLGameObject(const LoaderParams* params):
 
 void SDLGameObject::draw(SDL_Renderer* pRenderer)
 {
-	TextureManager::Instance()->draw(texture_id_, x_, y_, width_, height_, pRenderer);
+	TextureManager::Instance()->draw(texture_id_, (int)position_.getX(), (int)position_.getY(), width_, height_, pRenderer);
 }
 
 void SDLGameObject::update()
 {
-
+	velocity_ += acceleration_;
+	position_ += velocity_;
 }
 
 void SDLGameObject::clean()
