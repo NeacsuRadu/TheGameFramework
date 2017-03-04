@@ -27,6 +27,7 @@
     <ClCompile Include="..\src\vector2d\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\GameStates\GameState.h" />
     <ClInclude Include="..\src\game\Game.h" />
     <ClInclude Include="..\src\inputHandler\InputManager.h" />
     <ClInclude Include="..\src\objects\GameObject.h" />

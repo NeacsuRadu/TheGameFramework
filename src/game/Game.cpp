@@ -74,7 +74,7 @@ void Game::render()
 
 	for (auto it = 0; it != m_gameObjects.size(); ++it)
 	{
-		m_gameObjects[it]->draw(m_pRenderer);
+		m_gameObjects[it]->draw();
 	}
 	SDL_RenderPresent(m_pRenderer);
 }

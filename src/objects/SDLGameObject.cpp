@@ -12,14 +12,14 @@ SDLGameObject::SDLGameObject(const LoaderParams* params):
 
 }
 
-void SDLGameObject::draw(SDL_Renderer* pRenderer)
+void SDLGameObject::draw()
 {
 	TextureManager::Instance()->draw(texture_id_, (int)position_.getX(), (int)position_.getY(), width_, height_);
 }
 
 void SDLGameObject::update()
 {
-	if (InputManager::Instance()->isKeyDown(SDL_SCANCODE_RIGHT))
+	/*if (InputManager::Instance()->isKeyDown(SDL_SCANCODE_RIGHT))
 	{
 		position_ += Vector2D(2, 0);
 	}
@@ -34,11 +34,12 @@ void SDLGameObject::update()
 	if (InputManager::Instance()->isKeyDown(SDL_SCANCODE_DOWN))
 	{
 		position_ += Vector2D(0, 2);
-	}
+	}*/
 
-	/*velocity_ += acceleration_;
-	position_ += velocity_;*/
+	velocity_ = (*(InputManager::Instance()->GetMousePosition()) - position_) / 100;
 
+	/*velocity_ += acceleration_;*/
+	position_ += velocity_;
 }
 
 void SDLGameObject::clean()

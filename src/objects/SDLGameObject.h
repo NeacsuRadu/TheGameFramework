@@ -12,7 +12,7 @@ class SDLGameObject : public GameObject
 public:
 	SDLGameObject(const LoaderParams* params);
 
-	virtual void draw(SDL_Renderer* pRenderer);
+	virtual void draw();
 	virtual void update();
 	virtual void clean();
 
