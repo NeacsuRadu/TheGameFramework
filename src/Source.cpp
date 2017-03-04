@@ -11,7 +11,7 @@ int main(int argc, char* args[])
 	unsigned long long frame_start, frame_time;
 	Game* game = Game::Instance();
 
-	game->init("First try", 100, 100, 640, 480, 0);
+	game->init("First try", 100, 100, 1080, 960, false);
 
 	while (game->running())
 	{

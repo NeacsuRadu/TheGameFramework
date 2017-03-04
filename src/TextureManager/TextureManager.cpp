@@ -24,7 +24,7 @@ TextureManager* TextureManager::Instance()
 	return m_pInstance;
 }
 
-void TextureManager::load(std::string pTextureID, std::string pImagePath, SDL_Renderer* pRenderer)
+void TextureManager::load(std::string pTextureID, std::string pImagePath)
 {
 	SDL_Surface* pTempSurface = IMG_Load(pImagePath.c_str());
 	if (pTempSurface == nullptr)
@@ -33,7 +33,7 @@ void TextureManager::load(std::string pTextureID, std::string pImagePath, SDL_Re
 		return;
 	}
 
-	SDL_Texture* pTexture = SDL_CreateTextureFromSurface(pRenderer, pTempSurface);
+	SDL_Texture* pTexture = SDL_CreateTextureFromSurface(Game::Instance()->getRenderer(), pTempSurface);
 	SDL_FreeSurface(pTempSurface);
 
 	if (pTexture != nullptr)
@@ -46,7 +46,7 @@ void TextureManager::load(std::string pTextureID, std::string pImagePath, SDL_Re
 	}
 }
 
-void TextureManager::draw(std::string pTextureID, int x, int y, int width, int height, SDL_Renderer* pRenderer)
+void TextureManager::draw(std::string pTextureID, int x, int y, int width, int height)
 {
 	SDL_Rect srcRect;
 	SDL_Rect destRect;
@@ -58,5 +58,5 @@ void TextureManager::draw(std::string pTextureID, int x, int y, int width, int h
 	destRect.x = x;
 	destRect.y = y;
 
-	SDL_RenderCopyEx(pRenderer, m_mTextureContainer[pTextureID], &srcRect, &destRect, 0, 0, SDL_FLIP_NONE);
+	SDL_RenderCopyEx(Game::Instance()->getRenderer(), m_mTextureContainer[pTextureID], &srcRect, &destRect, 0, 0, SDL_FLIP_NONE);
 }

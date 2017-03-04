@@ -59,7 +59,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		return false;
 	}
 
-	TextureManager::Instance()->load(std::string("img"), std::string("D:\\MDS\\Bleah\\images\\min.png"), m_pRenderer);
+	TextureManager::Instance()->load(std::string("img"), std::string("D:\\MDS\\Bleah\\images\\min.png"));
 	m_gameObjects.push_back(new SDLGameObject(new LoaderParams(0, 0, 200, 200, "img")));
 
 	m_bRunning = true;
@@ -76,33 +76,20 @@ void Game::render()
 	{
 		m_gameObjects[it]->draw(m_pRenderer);
 	}
-
-
 	SDL_RenderPresent(m_pRenderer);
 }
 
 void Game::update()
 {
-
+	for (auto it = 0; it != m_gameObjects.size(); ++it)
+	{
+		m_gameObjects[it]->update();
+	}
 }
 
 void Game::handleEvents()
 {
-	SDL_Event ev;
-	if (SDL_PollEvent(&ev))
-	{
-		switch (ev.type)
-		{
-			case SDL_QUIT:
-			{
-				m_bRunning = false;
-				break;
-			}
-
-			default:
-				break;
-		}
-	}
+	InputManager::Instance()->update();
 }
 
 void Game::uninit()
@@ -121,6 +108,11 @@ bool Game::running()
 SDL_Renderer* Game::getRenderer()
 {
 	return m_pRenderer;
+}
+
+void Game::quit()
+{
+	m_bRunning = false;
 }
 
 

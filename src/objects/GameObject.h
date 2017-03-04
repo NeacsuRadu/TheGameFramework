@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-#include "../TextureManager/TextureManager.h"
+#include "../../include/SDL.h"
 
 struct LoaderParams
 {

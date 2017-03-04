@@ -4,6 +4,8 @@
 
 #include "../objects/GameObject.h"
 #include "../vector2d/Vector2D.h"
+#include "../TextureManager/TextureManager.h"
+#include "../inputHandler/InputManager.h"
 
 class SDLGameObject : public GameObject
 {

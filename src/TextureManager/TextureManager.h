@@ -5,16 +5,19 @@
 
 #include <iostream>
 #include <map>
+
 #include "../../include/SDL.h"
 #include "../../include/SDL_image.h"
+
+#include "../game/Game.h"
 
 class TextureManager
 {
 public:
 	~TextureManager();
 
-	void load(std::string pTextureID, std::string pImagePath, SDL_Renderer* pRenderer);
-	void draw(std::string pTextureID, int x, int y, int width, int height, SDL_Renderer* pRenderer);
+	void load(std::string pTextureID, std::string pImagePath);
+	void draw(std::string pTextureID, int x, int y, int width, int height);
 
 	static TextureManager* Instance();
 private:

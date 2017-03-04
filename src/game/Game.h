@@ -6,7 +6,6 @@
 #include <vector>
 
 #include "../../include/SDL.h"
-
 #include "../objects/SDLGameObject.h"
 
 class Game
@@ -20,7 +19,7 @@ public:
 	void update();
 	void handleEvents();
 	void uninit();
-
+	void quit();
 	bool running();
 
 	SDL_Renderer* getRenderer();
