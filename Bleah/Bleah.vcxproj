@@ -20,11 +20,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\GameStates\GameStateMachine.cpp" />
+    <ClCompile Include="..\src\GameStates\GameStates.cpp" />
     <ClCompile Include="..\src\GameStates\MenuGameState.cpp" />
     <ClCompile Include="..\src\GameStates\PlayGameState.cpp" />
     <ClCompile Include="..\src\game\Game.cpp" />
     <ClCompile Include="..\src\inputHandler\InputManager.cpp" />
     <ClCompile Include="..\src\objects\Button.cpp" />
+    <ClCompile Include="..\src\objects\GameObject.cpp" />
     <ClCompile Include="..\src\objects\SDLGameObject.cpp" />
     <ClCompile Include="..\src\Source.cpp" />
     <ClCompile Include="..\src\TextureManager\TextureManager.cpp" />

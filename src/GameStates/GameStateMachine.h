@@ -19,8 +19,10 @@ public:
 	void Render();
 	void Update();
 
+	void SetNextState(std::string next_state);
 private:
 	std::vector<GameState*> game_states_container_;
+	std::string next_state_;
 };
 
 #endif // !BLEAH_GAMESTATES_GAMESTATEMACHINE_H_

@@ -31,5 +31,10 @@ private:
 	std::vector<GameObject*> game_objects_;
 };
 
+class MenuStateCreator : public GameStateCreator
+{
+	virtual GameState* create();
+};
+
 #endif // !BLEAH_GAMESTATES_MENUGAMESTATE_H_
 

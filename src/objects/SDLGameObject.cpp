@@ -2,18 +2,22 @@
 
 #include <iostream>
 
-SDLGameObject::SDLGameObject(const LoaderParams* params):
-	GameObject(params),
-	position_(params->x, params->y),
+SDLGameObject::SDLGameObject():
 	velocity_(0,0),
 	acceleration_(0,0),
 	row_(0),
-	frame_(0),
-	width_(params->width),
-	height_(params->height),
-	texture_id_(params->texture_id)
+	frame_(0)
 {
 
+}
+
+
+void SDLGameObject::load(LoaderParams* pParams)
+{
+	width_ = pParams->width;
+	height_ = pParams->height;
+	texture_id_ = pParams->texture_id;
+	position_ = Vector2D(pParams->x, pParams->y);
 }
 
 void SDLGameObject::draw()

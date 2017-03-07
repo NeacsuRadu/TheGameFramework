@@ -2,12 +2,17 @@
 
 #include <iostream>
 
-Button::Button(LoaderParams* pParams, CallbackFunction func) :
-	SDLGameObject(pParams),
-	button_released_(true),
-	func(func)
+Button::Button() :
+	SDLGameObject(),
+	button_released_(true)
 {
 
+}
+
+void Button::load(LoaderParams* pParams)
+{
+	SDLGameObject::load(pParams);
+	func = pParams->func;
 }
 
 void Button::draw()
@@ -48,4 +53,9 @@ void Button::update()
 void Button::clean()
 {
 	SDLGameObject::clean();
+}
+
+GameObject* ButtonCreator::CreateGameObject()
+{
+	return new Button();
 }

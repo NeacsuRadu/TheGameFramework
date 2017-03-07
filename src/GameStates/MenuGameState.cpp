@@ -35,12 +35,17 @@ void MenuGameState::Update()
 bool MenuGameState::onEnter()
 {
 	std::cout << "Entering menu game state" << std::endl;
+	GameObject* object;
 
 	TextureManager::Instance()->load("play_button", "..\\images\\play.png");
-	game_objects_.push_back(new Button(new LoaderParams(10, 10, 300, 100, "play_button"), PlayButtonCallBack));
+	object = Game::Instance()->GetGameObjectFactory()->Create("button");
+	object->load(new LoaderParams(10, 10, 300, 100, "play_button", PlayButtonCallBack));
+	game_objects_.push_back(object);
 
 	TextureManager::Instance()->load("quit_button", "..\\images\\quit.png");
-	game_objects_.push_back(new Button(new LoaderParams(10, 400, 300, 100, "quit_button"), QuitButtonCallBack));
+	object = Game::Instance()->GetGameObjectFactory()->Create("button");
+	object->load(new LoaderParams(10, 400, 300, 100, "quit_button", QuitButtonCallBack));
+	game_objects_.push_back(object);
 	
 	return true;
 }
@@ -65,10 +70,16 @@ std::string MenuGameState::getStateId() const
 
 void MenuGameState::PlayButtonCallBack()
 {
-	Game::Instance()->GetGameStateMachine()->ChangeState(new PlayGameState());
+	Game::Instance()->GetGameStateMachine()->SetNextState("play");
 }
 
 void MenuGameState::QuitButtonCallBack()
 {
 	Game::Instance()->quit();
+}
+
+
+GameState* MenuStateCreator::create()
+{
+	return new MenuGameState();
 }

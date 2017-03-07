@@ -21,5 +21,12 @@ private:
 	static std::string game_state_id_;
 };
 
+class PlayStateCreator : public GameStateCreator
+{
+public:
+	virtual GameState* create();
+	virtual ~PlayStateCreator() {}
+};
+
 #endif // !BLEAH_GAMESTATES_PLAYGAMESTATE_H_
 

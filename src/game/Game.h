@@ -25,7 +25,10 @@ public:
 	void uninit();
 	void quit();
 	bool running();
-	GameStateMachine* GetGameStateMachine();
+	
+	GameStateMachine* GetGameStateMachine() const;
+	GameObjectFactory* GetGameObjectFactory() const;
+	GameStateFactory* GetGameStateFactory() const;
 
 	SDL_Renderer* getRenderer();
 
@@ -39,7 +42,8 @@ private:
 	SDL_Renderer* m_pRenderer;
 	bool m_bRunning;
 	GameStateMachine* game_state_machine_;
-
+	GameObjectFactory* game_object_factory_;
+	GameStateFactory* game_state_factory_;
 };
 #endif
 

@@ -1,5 +1,8 @@
 #include "Game.h"
 
+#include "../objects/Button.h"
+#include "../GameStates/MenuGameState.h"
+#include "../GameStates/PlayGameState.h"
 
 Game* Game::m_pInstance = nullptr;
 
@@ -60,11 +63,15 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		return false;
 	}
 
-	/*TextureManager::Instance()->load(std::string("img"), std::string("D:\\MDS\\Bleah\\images\\min.png"));
-	m_gameObjects.push_back(new SDLGameObject(new LoaderParams(0, 0, 200, 200, "img")));*/
+	game_object_factory_ = new GameObjectFactory();
+	game_object_factory_->Register("button", new ButtonCreator());
+
+	game_state_factory_ = new GameStateFactory();
+	game_state_factory_->Register("menu", new MenuStateCreator());
+	game_state_factory_->Register("play", new PlayStateCreator());
 
 	game_state_machine_ = new GameStateMachine();
-	game_state_machine_->PushState(new MenuGameState());
+	game_state_machine_->PushState(game_state_factory_->Create("menu"));
 
 	m_bRunning = true;
 
@@ -120,10 +127,21 @@ void Game::quit()
 	m_bRunning = false;
 }
 
-GameStateMachine* Game::GetGameStateMachine()
+GameStateMachine* Game::GetGameStateMachine() const
 {
 	return game_state_machine_;
 }
+
+GameObjectFactory* Game::GetGameObjectFactory() const
+{
+	return game_object_factory_;
+}
+
+GameStateFactory* Game::GetGameStateFactory() const
+{
+	return game_state_factory_;
+}
+
 
 
 

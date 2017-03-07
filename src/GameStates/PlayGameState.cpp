@@ -40,3 +40,9 @@ std::string PlayGameState::getStateId() const
 {
 	return game_state_id_;
 }
+
+
+GameState* PlayStateCreator::create()
+{
+	return new PlayGameState();
+}

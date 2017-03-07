@@ -1,6 +1,9 @@
 #include "../GameStates/GameStateMachine.h"
 
-GameStateMachine::GameStateMachine()
+#include "../game/Game.h"
+
+GameStateMachine::GameStateMachine() :
+	next_state_(std::string("none"))
 {
 
 }
@@ -18,6 +21,11 @@ void GameStateMachine::Render()
 void GameStateMachine::Update()
 {
 	game_states_container_.back()->Update();
+	if (next_state_ != "none")
+	{
+		ChangeState(Game::Instance()->GetGameStateFactory()->Create(next_state_));
+		next_state_ = "none";
+	}
 }
 
 void GameStateMachine::PopState()
@@ -58,3 +66,7 @@ void GameStateMachine::ChangeState(GameState* game_state)
 	game_states_container_.back()->onEnter();
 }
 
+void GameStateMachine::SetNextState(std::string next_state)
+{
+	next_state_ = next_state;
+}

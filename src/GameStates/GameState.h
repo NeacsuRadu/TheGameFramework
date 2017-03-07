@@ -3,6 +3,7 @@
 #define BLEAH_GAMESTATES_GAMESTATE_H_
 
 #include <iostream>
+#include <map>
 
 class GameState
 {
@@ -18,6 +19,21 @@ public:
 	virtual ~GameState() {};
 };
 
+class GameStateCreator
+{
+public:
+	virtual GameState* create() = 0;
+	virtual ~GameStateCreator() {};
+};
 
+class GameStateFactory
+{
+public:
+	bool Register(std::string creatorId, GameStateCreator* creator);
+	GameState* Create(std::string creatorId);
+	~GameStateFactory();
+private:
+	std::map<std::string, GameStateCreator*> m_creators;
+};
 #endif // !GAMESTATES_GAMESTATE_H_
 
