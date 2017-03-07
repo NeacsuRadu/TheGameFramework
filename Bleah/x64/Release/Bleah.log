@@ -1,9 +1,8 @@
-﻿  SDLGameObject.cpp
-..\src\objects\SDLGameObject.cpp(11): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+﻿  MenuGameState.cpp
   Generating code
-  142 of 469 functions (30.3%) were compiled, the rest were copied from previous compilation.
-    126 functions were new in current compilation
-    19 functions had inline decision re-evaluated but remain unchanged
+  4 of 593 functions ( 0.7%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    3 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Bleah.vcxproj -> D:\MDS\Bleah\x64\Release\Bleah.exe
   Bleah.vcxproj -> D:\MDS\Bleah\x64\Release\Bleah.pdb (Full PDB)

@@ -1,5 +1,6 @@
 #include "Game.h"
 
+
 Game* Game::m_pInstance = nullptr;
 
 Game::Game() :
@@ -59,8 +60,11 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		return false;
 	}
 
-	TextureManager::Instance()->load(std::string("img"), std::string("D:\\MDS\\Bleah\\images\\min.png"));
-	m_gameObjects.push_back(new SDLGameObject(new LoaderParams(0, 0, 200, 200, "img")));
+	/*TextureManager::Instance()->load(std::string("img"), std::string("D:\\MDS\\Bleah\\images\\min.png"));
+	m_gameObjects.push_back(new SDLGameObject(new LoaderParams(0, 0, 200, 200, "img")));*/
+
+	game_state_machine_ = new GameStateMachine();
+	game_state_machine_->PushState(new MenuGameState());
 
 	m_bRunning = true;
 
@@ -72,29 +76,30 @@ void Game::render()
 	SDL_SetRenderDrawColor(m_pRenderer, 0, 0, 0, 0);
 	SDL_RenderClear(m_pRenderer);
 
-	for (auto it = 0; it != m_gameObjects.size(); ++it)
-	{
-		m_gameObjects[it]->draw();
-	}
+	game_state_machine_->Render();
+
 	SDL_RenderPresent(m_pRenderer);
 }
 
 void Game::update()
 {
-	for (auto it = 0; it != m_gameObjects.size(); ++it)
-	{
-		m_gameObjects[it]->update();
-	}
+	game_state_machine_->Update();
 }
 
 void Game::handleEvents()
 {
 	InputManager::Instance()->update();
+
+	if (InputManager::Instance()->isKeyDown(SDL_SCANCODE_RETURN))
+	{
+		game_state_machine_->ChangeState(new PlayGameState());
+	}
 }
 
 void Game::uninit()
 {
 	std::cout << "Uninitialize things" << std::endl;
+	delete game_state_machine_;
 	SDL_DestroyWindow(m_pWindow);
 	SDL_DestroyRenderer(m_pRenderer);
 	SDL_Quit();
@@ -113,6 +118,11 @@ SDL_Renderer* Game::getRenderer()
 void Game::quit()
 {
 	m_bRunning = false;
+}
+
+GameStateMachine* Game::GetGameStateMachine()
+{
+	return game_state_machine_;
 }
 
 

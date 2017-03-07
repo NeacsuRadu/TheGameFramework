@@ -18,6 +18,9 @@ public:
 
 	void load(std::string pTextureID, std::string pImagePath);
 	void draw(std::string pTextureID, int x, int y, int width, int height);
+	void draw(std::string pTextureID, int x, int y, int width, int height, int row, int frame);
+
+	void remove(std::string pTextureId);
 
 	static TextureManager* Instance();
 private:

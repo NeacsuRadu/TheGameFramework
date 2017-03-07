@@ -19,8 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\GameStates\GameStateMachine.cpp" />
+    <ClCompile Include="..\src\GameStates\MenuGameState.cpp" />
+    <ClCompile Include="..\src\GameStates\PlayGameState.cpp" />
     <ClCompile Include="..\src\game\Game.cpp" />
     <ClCompile Include="..\src\inputHandler\InputManager.cpp" />
+    <ClCompile Include="..\src\objects\Button.cpp" />
     <ClCompile Include="..\src\objects\SDLGameObject.cpp" />
     <ClCompile Include="..\src\Source.cpp" />
     <ClCompile Include="..\src\TextureManager\TextureManager.cpp" />
@@ -28,8 +32,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\GameStates\GameState.h" />
+    <ClInclude Include="..\src\GameStates\GameStateMachine.h" />
+    <ClInclude Include="..\src\GameStates\MenuGameState.h" />
+    <ClInclude Include="..\src\GameStates\PlayGameState.h" />
     <ClInclude Include="..\src\game\Game.h" />
     <ClInclude Include="..\src\inputHandler\InputManager.h" />
+    <ClInclude Include="..\src\objects\Button.h" />
     <ClInclude Include="..\src\objects\GameObject.h" />
     <ClInclude Include="..\src\objects\SDLGameObject.h" />
     <ClInclude Include="..\src\TextureManager\TextureManager.h" />
@@ -90,8 +98,8 @@
     <LibraryPath>D:\MDS\Bleah\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>D:\MDS\Bleah\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\MDS\Bleah\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

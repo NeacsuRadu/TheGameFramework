@@ -23,6 +23,8 @@ protected:
 	Vector2D acceleration_;
 	int width_;
 	int height_;
+	int row_;
+	int frame_;
 	std::string texture_id_;
 };
 

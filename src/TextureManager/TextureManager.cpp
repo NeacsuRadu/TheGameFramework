@@ -60,3 +60,28 @@ void TextureManager::draw(std::string pTextureID, int x, int y, int width, int h
 
 	SDL_RenderCopyEx(Game::Instance()->getRenderer(), m_mTextureContainer[pTextureID], &srcRect, &destRect, 0, 0, SDL_FLIP_NONE);
 }
+
+void TextureManager::draw(std::string pTextureID, int x, int y, int width, int height, int row, int frame)
+{
+	SDL_Rect srcRect;
+	SDL_Rect destRect;
+
+	srcRect.x = frame * width;
+	srcRect.y = row * height;
+	srcRect.w = destRect.w = width;
+	srcRect.h = destRect.h = height;
+	destRect.x = x;
+	destRect.y = y;
+
+	SDL_RenderCopyEx(Game::Instance()->getRenderer(), m_mTextureContainer[pTextureID], &srcRect, &destRect, 0, 0, SDL_FLIP_NONE);
+}
+
+void TextureManager::remove(std::string pTextureID)
+{
+	auto it = m_mTextureContainer.find(pTextureID);
+	if (it != m_mTextureContainer.end())
+	{
+		SDL_DestroyTexture(it->second);
+		m_mTextureContainer.erase(it);
+	}
+}

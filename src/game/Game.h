@@ -6,7 +6,11 @@
 #include <vector>
 
 #include "../../include/SDL.h"
+
 #include "../objects/SDLGameObject.h"
+#include "../GameStates/GameStateMachine.h"
+#include "../GameStates/MenuGameState.h"
+#include "../GameStates/PlayGameState.h"
 
 class Game
 {
@@ -21,6 +25,7 @@ public:
 	void uninit();
 	void quit();
 	bool running();
+	GameStateMachine* GetGameStateMachine();
 
 	SDL_Renderer* getRenderer();
 
@@ -33,8 +38,8 @@ private:
 	SDL_Window* m_pWindow;
 	SDL_Renderer* m_pRenderer;
 	bool m_bRunning;
+	GameStateMachine* game_state_machine_;
 
-	std::vector<GameObject*> m_gameObjects;
 };
 #endif
 
