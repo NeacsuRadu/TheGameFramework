@@ -39,7 +39,7 @@ bool MenuGameState::onEnter()
 	TextureManager::Instance()->load("play_button", "..\\images\\play.png");
 	game_objects_.push_back(new Button(new LoaderParams(10, 10, 300, 100, "play_button"), PlayButtonCallBack));
 
-	TextureManager::Instance()->load("quit_button", "D:\\MDS\\Bleah\\images\\quit.png");
+	TextureManager::Instance()->load("quit_button", "..\\images\\quit.png");
 	game_objects_.push_back(new Button(new LoaderParams(10, 400, 300, 100, "quit_button"), QuitButtonCallBack));
 	
 	return true;
