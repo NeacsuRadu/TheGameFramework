@@ -49,6 +49,12 @@
     <Filter Include="Source Files\GameStates">
       <UniqueIdentifier>{f4b32430-4e53-4394-bd6a-1f5917a85e8f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\xmlparser">
+      <UniqueIdentifier>{0c4da06a-f4c9-4a63-9b2e-212abfece046}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\xmlparser">
+      <UniqueIdentifier>{b721c90b-c10d-4a23-bce9-268a20513460}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Source.cpp">
@@ -87,6 +93,12 @@
     <ClCompile Include="..\src\GameStates\GameStates.cpp">
       <Filter>Source Files\GameStates</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\GameStates\PauseGameState.cpp">
+      <Filter>Source Files\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\xmlparser\StateParser.cpp">
+      <Filter>Source Files\xmlparser</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\game\Game.h">
@@ -121,6 +133,12 @@
     </ClInclude>
     <ClInclude Include="..\src\objects\Button.h">
       <Filter>Header Files\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameStates\PauseGameState.h">
+      <Filter>Header Files\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\xmlparser\StateParser.h">
+      <Filter>Header Files\xmlparser</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

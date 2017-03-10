@@ -22,6 +22,7 @@
     <ClCompile Include="..\src\GameStates\GameStateMachine.cpp" />
     <ClCompile Include="..\src\GameStates\GameStates.cpp" />
     <ClCompile Include="..\src\GameStates\MenuGameState.cpp" />
+    <ClCompile Include="..\src\GameStates\PauseGameState.cpp" />
     <ClCompile Include="..\src\GameStates\PlayGameState.cpp" />
     <ClCompile Include="..\src\game\Game.cpp" />
     <ClCompile Include="..\src\inputHandler\InputManager.cpp" />
@@ -31,11 +32,13 @@
     <ClCompile Include="..\src\Source.cpp" />
     <ClCompile Include="..\src\TextureManager\TextureManager.cpp" />
     <ClCompile Include="..\src\vector2d\Vector2D.cpp" />
+    <ClCompile Include="..\src\xmlparser\StateParser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\GameStates\GameState.h" />
     <ClInclude Include="..\src\GameStates\GameStateMachine.h" />
     <ClInclude Include="..\src\GameStates\MenuGameState.h" />
+    <ClInclude Include="..\src\GameStates\PauseGameState.h" />
     <ClInclude Include="..\src\GameStates\PlayGameState.h" />
     <ClInclude Include="..\src\game\Game.h" />
     <ClInclude Include="..\src\inputHandler\InputManager.h" />
@@ -44,6 +47,7 @@
     <ClInclude Include="..\src\objects\SDLGameObject.h" />
     <ClInclude Include="..\src\TextureManager\TextureManager.h" />
     <ClInclude Include="..\src\vector2d\Vector2D.h" />
+    <ClInclude Include="..\src\xmlparser\StateParser.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{324E94A2-02B8-412F-88E3-1068BEF88D0B}</ProjectGuid>

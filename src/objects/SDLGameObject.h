@@ -29,4 +29,9 @@ protected:
 	std::string texture_id_;
 };
 
+class RandomCreator : public GameObjectCreator
+{
+	virtual GameObject* CreateGameObject();
+};
+
 #endif // !BLEAH_OBJECTS_SDLGAMEOBJECT_H_

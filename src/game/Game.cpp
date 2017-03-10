@@ -3,6 +3,7 @@
 #include "../objects/Button.h"
 #include "../GameStates/MenuGameState.h"
 #include "../GameStates/PlayGameState.h"
+#include "../GameStates/PauseGameState.h"
 
 Game* Game::m_pInstance = nullptr;
 
@@ -65,10 +66,12 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 	game_object_factory_ = new GameObjectFactory();
 	game_object_factory_->Register("button", new ButtonCreator());
+	game_object_factory_->Register("min", new RandomCreator());
 
 	game_state_factory_ = new GameStateFactory();
 	game_state_factory_->Register("menu", new MenuStateCreator());
 	game_state_factory_->Register("play", new PlayStateCreator());
+	game_state_factory_->Register("pause", new PauseStateCreator());
 
 	game_state_machine_ = new GameStateMachine();
 	game_state_machine_->PushState(game_state_factory_->Create("menu"));

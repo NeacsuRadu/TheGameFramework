@@ -1,8 +1,9 @@
-﻿  GameStateMachine.cpp
+﻿  SDLGameObject.cpp
+..\src\objects\SDLGameObject.cpp(20): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Generating code
-  9 of 905 functions ( 1.0%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    3 functions had inline decision re-evaluated but remain unchanged
+  7 of 939 functions ( 0.7%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    8 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Bleah.vcxproj -> D:\MDS\Bleah\x64\Release\Bleah.exe
   Bleah.vcxproj -> D:\MDS\Bleah\x64\Release\Bleah.pdb (Full PDB)

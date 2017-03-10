@@ -27,6 +27,23 @@ void SDLGameObject::draw()
 
 void SDLGameObject::update()
 {
+	if (InputManager::Instance()->isKeyDown(SDL_SCANCODE_UP))
+	{
+		position_ += Vector2D(0, -2);
+	}
+	if (InputManager::Instance()->isKeyDown(SDL_SCANCODE_DOWN))
+	{
+		position_ += Vector2D(0, 2);
+	}
+	if (InputManager::Instance()->isKeyDown(SDL_SCANCODE_LEFT))
+	{
+		position_ += Vector2D(-2, 0);
+	}
+	if (InputManager::Instance()->isKeyDown(SDL_SCANCODE_RIGHT))
+	{
+		position_ += Vector2D(2, 0);
+	}
+
 	velocity_ += acceleration_;
 	position_ += velocity_;
 }
@@ -34,4 +51,9 @@ void SDLGameObject::update()
 void SDLGameObject::clean()
 {
 	TextureManager::Instance()->remove(texture_id_);
+}
+
+GameObject* RandomCreator::CreateGameObject()
+{
+	return new SDLGameObject();
 }
