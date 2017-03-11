@@ -1,6 +1,7 @@
 #include "../xmlparser/StateParser.h"
 
 #include "../TextureManager/TextureManager.h"
+#include "../../include/tinyxml/tinyxml.h"
 
 bool StateParser::parseState(const char* stateFile, std::string stateID, std::vector<GameObject*> *pObjects, std::vector<std::string> *pTextureIDs)
 {
@@ -49,21 +50,20 @@ void StateParser::parseObjects(TiXmlElement* pStateRoot, std::vector<GameObject*
 {
 	for (auto e = pStateRoot->FirstChildElement(); e != nullptr; e = e->NextSiblingElement())
 	{
-		int x, y, width, height, numFrames, callbackID, animSpeed;
+		int x, y, width, height, callbackID;
 		std::string textureID;
 
 		e->Attribute("x", &x);
 		e->Attribute("y", &y);
 		e->Attribute("width", &width);
 		e->Attribute("height", &height);
-		e->Attribute("numFrames", &numFrames);
 		e->Attribute("callbackID", &callbackID);
-		e->Attribute("animSpeed", &animSpeed);
 
 		textureID = e->Attribute("textureID");
 
 		GameObject* pGameObject = Game::Instance()->GetGameObjectFactory()->Create(e->Attribute("type"));
 		pGameObject->load(new LoaderParams(x, y, width, height, textureID, callbackID));
+		pObjects->push_back(pGameObject);
 	}
 }
 

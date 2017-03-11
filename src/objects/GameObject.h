@@ -12,14 +12,15 @@ typedef void(*CallbackFunction)();
 
 struct LoaderParams
 {
-	LoaderParams(int x, int y, int width, int height, std::string texture_id, CallbackFunction func = 0) :
-		x(x), y(y), width(width), height(height), texture_id(texture_id), func(func) {}
+	LoaderParams(int x, int y, int width, int height, std::string texture_id, int callbackID = 0) :
+		x(x), y(y), width(width), height(height), texture_id(texture_id), callbackID(callbackID) {}
 	int x;
 	int y;
 	int width;
 	int height;
+	int callbackID;
 	std::string texture_id;
-	CallbackFunction func;
+	
 };
 
 
@@ -32,6 +33,7 @@ public:
 	virtual void update() = 0;
 	virtual void clean() = 0;
 	virtual void load(LoaderParams* pParams) = 0;
+
 	virtual ~GameObject() {};
 protected:
 

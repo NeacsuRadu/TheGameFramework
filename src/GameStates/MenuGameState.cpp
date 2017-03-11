@@ -5,6 +5,7 @@
 #include "../TextureManager/TextureManager.h"
 #include "../objects/Button.h"
 #include "../GameStates/PlayGameState.h"
+#include "../xmlparser/StateParser.h"
 
 std::string MenuGameState::game_state_id_ = "MENU";
 
@@ -34,19 +35,22 @@ void MenuGameState::Update()
 
 bool MenuGameState::onEnter()
 {
-	std::cout << "Entering menu game state" << std::endl;
-	GameObject* object;
+	StateParser* myStateParser = new StateParser();
 
-	TextureManager::Instance()->load("play_button", "..\\images\\play.png");
-	object = Game::Instance()->GetGameObjectFactory()->Create("button");
-	object->load(new LoaderParams(10, 10, 300, 100, "play_button", PlayButtonCallBack));
-	game_objects_.push_back(object);
+	bool bResult = myStateParser->parseState("settings\\states.xml", game_state_id_, &game_objects_, &m_TextureIDs);
 
-	TextureManager::Instance()->load("quit_button", "..\\images\\quit.png");
-	object = Game::Instance()->GetGameObjectFactory()->Create("button");
-	object->load(new LoaderParams(10, 400, 300, 100, "quit_button", QuitButtonCallBack));
-	game_objects_.push_back(object);
+	if (!bResult)
+		return false;
+
+	m_Callbacks.push_back(nullptr);
+	m_Callbacks.push_back(PlayButtonCallBack);
+	m_Callbacks.push_back(QuitButtonCallBack);
+
+	SetCallbacks();
 	
+	delete myStateParser;
+
+	std::cout << "Entering menu game state" << std::endl;
 	return true;
 }
 
@@ -78,6 +82,21 @@ void MenuGameState::QuitButtonCallBack()
 	Game::Instance()->quit();
 }
 
+void MenuGameState::SetCallbacks()
+{
+	for (auto it : game_objects_)
+	{
+		Button* button = dynamic_cast<Button*>(it);
+		if (button != nullptr)
+		{
+			button->SetCallback(m_Callbacks[button->GetCallbackID()]);
+		}
+	}
+}
+
+//
+//			MENU STATE CREATOR 
+//
 
 GameState* MenuStateCreator::create()
 {

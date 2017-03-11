@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<STATES>
+	<MENU>
+		<TEXTURES>
+			<texture filename="..\\images\\play.png" id="play_button"></texture>
+			<texture filename="..\\images\\quit.png" id="quit_button"></texture>
+		</TEXTURES>
+		
+		<OBJECTS>
+			<object type="button" x="10"  y="10" width="300" height="100" textureID="play_button" callbackID="1"></object>
+			<object type="button" x="300"  y="10" width="300" height="100" textureID="quit_button" callbackID="2"></object>
+		</OBJECTS>
+	</MENU>
+	
+	<PAUSE>
+		<TEXTURES>
+			<texture filename="..\\images\\resume.png" id="resume_button"></texture>
+			<texture filename="..\\images\\mainmenu.png" id="main_menu_button"></texture>
+		</TEXTURES>
+		
+		<OBJECTS>
+			<object type="button" x="10"  y="10" width="300" height="100" textureID="resume_button" callbackID="1"></object>
+			<object type="button" x="300"  y="300" width="300" height="100" textureID="main_menu_button" callbackID="2"></object>
+		</OBJECTS>
+	</PAUSE>
+
+	<PLAYSTATE>
+			
+	
+	</PLAYSTATE>
+	
+</STATES>

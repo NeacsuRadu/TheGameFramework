@@ -19,6 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\include\tinyxml\tinystr.cpp" />
+    <ClCompile Include="..\include\tinyxml\tinyxml.cpp" />
+    <ClCompile Include="..\include\tinyxml\tinyxmlerror.cpp" />
+    <ClCompile Include="..\include\tinyxml\tinyxmlparser.cpp" />
     <ClCompile Include="..\src\GameStates\GameStateMachine.cpp" />
     <ClCompile Include="..\src\GameStates\GameStates.cpp" />
     <ClCompile Include="..\src\GameStates\MenuGameState.cpp" />

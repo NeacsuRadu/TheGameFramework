@@ -7,6 +7,7 @@
 
 #include "../objects/GameObject.h"
 #include "../../include/tinyxml/tinyxml.h"
+#include "../../include/tinyxml/tinystr.h"
 
 class StateParser
 {

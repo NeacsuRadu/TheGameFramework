@@ -55,6 +55,9 @@
     <Filter Include="Source Files\xmlparser">
       <UniqueIdentifier>{b721c90b-c10d-4a23-bce9-268a20513460}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\tinyxml">
+      <UniqueIdentifier>{3d1afb2c-6730-4830-84de-a466360b854d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Source.cpp">
@@ -98,6 +101,18 @@
     </ClCompile>
     <ClCompile Include="..\src\xmlparser\StateParser.cpp">
       <Filter>Source Files\xmlparser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\include\tinyxml\tinystr.cpp">
+      <Filter>Source Files\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\include\tinyxml\tinyxml.cpp">
+      <Filter>Source Files\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\include\tinyxml\tinyxmlerror.cpp">
+      <Filter>Source Files\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\include\tinyxml\tinyxmlparser.cpp">
+      <Filter>Source Files\tinyxml</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

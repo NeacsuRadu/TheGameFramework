@@ -26,9 +26,13 @@ private:
 	static std::string pause_state_id_;	
 
 	static void ResumeButtonCallback();
-	//static void MenuButtonCallback();
+	static void MenuButtonCallback();
+
+	void SetCallbacks();
 
 	std::vector<GameObject*> m_objects;
+	std::vector<std::string> m_TextureIDs;
+	std::vector<CallbackFunction> m_Callbacks;
 };
 
 class PauseStateCreator : public GameStateCreator

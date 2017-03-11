@@ -28,7 +28,11 @@ private:
 	static void PlayButtonCallBack();
 	static void QuitButtonCallBack();
 
+	void SetCallbacks();
+
 	std::vector<GameObject*> game_objects_;
+	std::vector<CallbackFunction> m_Callbacks;
+	std::vector<std::string> m_TextureIDs;
 };
 
 class MenuStateCreator : public GameStateCreator

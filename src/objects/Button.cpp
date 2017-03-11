@@ -12,7 +12,7 @@ Button::Button() :
 void Button::load(LoaderParams* pParams)
 {
 	SDLGameObject::load(pParams);
-	func = pParams->func;
+	m_callbackID = pParams->callbackID;
 }
 
 void Button::draw()
@@ -55,7 +55,23 @@ void Button::clean()
 	SDLGameObject::clean();
 }
 
+int Button::GetCallbackID()
+{
+	return m_callbackID;
+}
+
+void Button::SetCallback(CallbackFunction fn)
+{
+	func = fn;
+}
+
+//
+//		ButtonCreator
+//
+
 GameObject* ButtonCreator::CreateGameObject()
 {
 	return new Button();
 }
+
+

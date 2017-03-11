@@ -31,9 +31,16 @@ void GameStateMachine::Update()
 	{
 		PushState(Game::Instance()->GetGameStateFactory()->Create("pause"));
 	} 
-	 else if (next_state_ != "none")
+	else if (next_state_ != "none")
 	{
-		ChangeState(Game::Instance()->GetGameStateFactory()->Create(next_state_));
+		if(game_states_container_.back()->getStateId() != "PAUSE")
+			ChangeState(Game::Instance()->GetGameStateFactory()->Create(next_state_));
+		else
+		{
+			std::cout << "Din pause in alta" << std::endl;
+			PopState();
+			ChangeState(Game::Instance()->GetGameStateFactory()->Create(next_state_));
+		}
 		next_state_ = "none";
 	}
 }

@@ -18,8 +18,12 @@ public:
 	virtual void update();
 	virtual void clean();
 	virtual void load(LoaderParams* pParams);
+
+	void SetCallback(CallbackFunction fn);
+	int GetCallbackID();
 private:
 	bool button_released_;
+	int m_callbackID;
 
 	CallbackFunction func;
 };

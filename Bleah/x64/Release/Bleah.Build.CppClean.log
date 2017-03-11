@@ -9,6 +9,10 @@ d:\mds\bleah\bleah\x64\release\game.obj
 d:\mds\bleah\bleah\x64\release\playgamestate.obj
 d:\mds\bleah\bleah\x64\release\menugamestate.obj
 d:\mds\bleah\bleah\x64\release\gamestatemachine.obj
+d:\mds\bleah\bleah\x64\release\gameobject.obj
+d:\mds\bleah\bleah\x64\release\gamestates.obj
+d:\mds\bleah\bleah\x64\release\pausegamestate.obj
+d:\mds\bleah\bleah\x64\release\stateparser.obj
 d:\mds\bleah\x64\release\bleah.exe
 d:\mds\bleah\x64\release\bleah.ipdb
 d:\mds\bleah\x64\release\bleah.iobj
